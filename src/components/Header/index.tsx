@@ -1,11 +1,32 @@
-import { HeaderContainer } from "./styles";
+import { MapPin, ShoppingCart } from "phosphor-react"
+
 import coffeeLogoImg from "../../assets/coffee-delivery-logo.svg"
+
+import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from "./styles"
 
 export function Header() {
   return (
     <HeaderContainer>
-      <div>
-        <img src={coffeeLogoImg} alt="" />
+      <div className='container'>
+        <img
+          src={coffeeLogoImg}
+          alt=''
+        />
+        <HeaderButtonsContainer>
+          <HeaderButton variant='purple'>
+            <MapPin
+              size={20}
+              weight='fill'
+            />
+            Juiz de Fora, MG
+          </HeaderButton>
+          <HeaderButton variant='yellow'>
+            <ShoppingCart
+              size={20}
+              weight='fill'
+            />
+          </HeaderButton>
+        </HeaderButtonsContainer>
       </div>
     </HeaderContainer>
   )
