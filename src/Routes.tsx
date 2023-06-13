@@ -1,13 +1,16 @@
 import { Route, Routes } from "react-router-dom"
-
-import { CompleteOrderPage } from "./pages/CompleteOrder/Index"
-import { HomePage } from "./pages/Home"
 import { DefaultLayout } from "./layouts/DefaultLayout"
+import { HomePage } from "./pages/Home"
+import { OrderConfirmedPage } from "./pages/OrderConfirmed"
+import { CompleteOrderPage } from "./pages/CompleteOrder"
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout/>}>
+      <Route
+        path='/'
+        element={<DefaultLayout />}
+      >
         <Route
           path='/'
           element={<HomePage />}
@@ -15,6 +18,10 @@ export function Router() {
         <Route
           path='/completeOrder'
           element={<CompleteOrderPage />}
+        />
+        <Route
+          path='/orderConfirmed'
+          element={<OrderConfirmedPage />}
         />
       </Route>
     </Routes>
