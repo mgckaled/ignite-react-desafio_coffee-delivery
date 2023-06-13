@@ -1,5 +1,5 @@
+import { CurrencyDollar, MapPinLine } from "phosphor-react"
 import { useTheme } from "styled-components"
-import { MapPinLine, CurrencyDollar } from "phosphor-react"
 
 import { ThemeType } from "../../../../@types/styled"
 import { TitleText } from "../../../../components/Typography"
@@ -11,6 +11,7 @@ import { CompleteOrderFormContainer, FormSectionContainer } from "./styles"
 
 export function CompleteOrderForm() {
   const { colors } = useTheme() as ThemeType
+
   return (
     <CompleteOrderFormContainer>
       <TitleText

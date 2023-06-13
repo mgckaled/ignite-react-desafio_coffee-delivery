@@ -3,6 +3,7 @@ import { useState } from "react"
 
 import { QuantityInput } from "../../../../components/QuantityInput"
 import { RegularText, TitleText } from "../../../../components/Typography"
+import { useCart } from "../../../../hooks/useCart"
 import { formatMoney } from "../../../../utils/formatMoney"
 
 import { AddCartWrapper, CardFooter, CoffeeCardContainer, Description, Name, Tags } from "./styles"
@@ -29,6 +30,16 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
   function handleDecrease() {
     setQuantity(state => state - 1)
+  }
+
+  const { addCoffeeToCart } = useCart()
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    }
+    addCoffeeToCart(coffeeToAdd)
   }
 
   const formattedPrice = formatMoney(coffee.price)
@@ -63,7 +74,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
             onDecrease={handleDecrease}
             quantity={quantity}
           />
-          <button>
+          <button onClick={handleAddToCart}>
             <ShoppingCart
               weight='fill'
               size={22}
