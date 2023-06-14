@@ -11,7 +11,7 @@ export default function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <BrowserRouter>
+      <BrowserRouter basename='/ignite-react-desafio_coffee-delivery'>
         <CartContextProvider>
           <Router />
         </CartContextProvider>
